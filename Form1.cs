@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
@@ -45,24 +39,7 @@ namespace Test {
         }
         questions[] que;
         private void button1_Click(object sender, EventArgs e) {
-            //загрузка файла
             string[] str = File.ReadAllLines("E:\\test.txt");
-            //MessageBox.Show(str[1]);
-            //string s1 = "hello world";
-            //string subString = "wwwaeas";
-            //int indexOfSubstring = s1.IndexOf(subString); // равно 6
-            //MessageBox.Show(indexOfSubstring.ToString());
-            //string[] que1 = { "1) Укажите тип данных, которое определяет служебное слово struct", "2) Укажите тип данных, которое определяет служебное слово struct" };
-            //string[] ans1 = { "Массив данных с различной структурой", "Массив данных с различной структурой" };
-            //string[] ans2 = { "Тип функций, которые могут иметь различную структуру параметров" ,"Тип функций, которые могут иметь различную структуру параметров" };
-            //string[] ans3 = { "Тип данных, которые могут менять свою структуру" , "Тип данных, которые могут менять свою структуру" };
-            //string[] ans4 = { "Составной объект, к которому могут входить элементы различных типов" , "Составной объект, к которому могут входить элементы различных типов" };
-            //char[] rA = { '4' , '2'};
-            //que = new questions[rA.Length];
-            //for(int i = 0;i < que1.Length; i++) {
-            //    que[i] = new questions(que1[i], ans1[i], ans2[i], ans3[i], ans4[i], rA[i]);
-            //}
-            //que[0] = new questions(que1, ans1, ans2, ans3, ans4, rA);
             List<string> que1 = new List<string>(), 
             ans1 = new List<string>(), 
             ans2 = new List<string>(), 
