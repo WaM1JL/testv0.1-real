@@ -5,20 +5,20 @@ using System.IO;
 
 namespace Test {
     public partial class Form1 : Form {
-        string ans;
-        uint num = 1;
-        double success = 0;
+        string ans; //Выбранный ответ
+        uint num = 1; //Номер вопроса
+        double success = 0; //Правильных ответов
         public Form1() {
             InitializeComponent();
             button2.Enabled = false;
         }
         class questions {
-            internal string question;
+            internal string question; //Вопрос
             internal string answer1;
             internal string answer2;
             internal string answer3;
             internal string answer4;
-            internal string ra;
+            internal string ra;  //Номер правильного ответа 
             public questions(string que, string ans1, string ans2, string ans3, string ans4, string rA) {
                 question = que;
                 answer1 = ans1;
@@ -29,7 +29,7 @@ namespace Test {
             }
 
         }
-        void func(questions que) {
+        void interf(questions que) {  //Интерфейс вопроса
             richTextBox1.Text = que.question;
             radioButton1.Text = que.answer1;
             radioButton2.Text = que.answer2;
@@ -46,7 +46,7 @@ namespace Test {
             ans3 = new List<string>(), 
             ans4 = new List<string>(), 
             rA = new List<string>();
-            foreach(string st in str) {
+            foreach(string st in str) { //Заполнение списка вопросов
                 if(st.IndexOf("que") == 0) {
                     que1.Add(st.TrimStart(new char[] {'q','u','e'}));
                 }
@@ -67,15 +67,15 @@ namespace Test {
                 }
             }
             que = new questions[que1.Count];
-            for(int i = 0; i < que1.Count; i++) {
+            for(int i = 0; i < que1.Count; i++) { //Заполнение класса вопроса
                 que[i] = new questions(que1[i], ans1[i], ans2[i], ans3[i], ans4[i], rA[i]);
             }
-            func(que[0]);
+            interf(que[0]);
             button2.Enabled = true;
             button1.Enabled = false;
             radioButton1.Checked = true;
         }
-        private void button2_Click(object sender, EventArgs e) {
+        private void button2_Click(object sender, EventArgs e) {//Кнопка ответа на вопрос
             if(num < que.Length) {
                 if(ans == que[num - 1].ra) {
                     MessageBox.Show("Правильно!!");
@@ -85,7 +85,7 @@ namespace Test {
                     MessageBox.Show("НЕПРАВИЛЬНО!!");
                 }
                 num++;
-                func(que[num - 1]);
+                interf(que[num - 1]);
             }
             else {
                 if(num == que.Length) {
