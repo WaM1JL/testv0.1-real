@@ -38,7 +38,7 @@ namespace Test {
             radioButtonAns1.Checked = true;
         }
         questions[] que;
-        private void button1_Click(object sender, EventArgs e) {
+        private void loadTestButton_Click(object sender, EventArgs e) {
             string[] str = File.ReadAllLines("E:\\test.txt");
             List<string> que1 = new List<string>(), 
             ans1 = new List<string>(), 
@@ -75,7 +75,7 @@ namespace Test {
             loadTestButton.Enabled = false;
             radioButtonAns1.Checked = true;
         }
-        private void button2_Click(object sender, EventArgs e) {//Кнопка ответа на вопрос
+        private void enterAnsButton_Click(object sender, EventArgs e) {//Кнопка ответа на вопрос
             if(num < que.Length) {
                 if(ans == que[num - 1].ra) {
                     MessageBox.Show("Правильно!!");

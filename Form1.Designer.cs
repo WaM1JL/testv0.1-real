@@ -93,7 +93,7 @@
             this.loadTestButton.TabIndex = 5;
             this.loadTestButton.Text = "Загрузить тест";
             this.loadTestButton.UseVisualStyleBackColor = true;
-            this.loadTestButton.Click += new System.EventHandler(this.button1_Click);
+            this.loadTestButton.Click += new System.EventHandler(this.loadTestButton_Click);
             // 
             // enterAnsButton
             // 
@@ -103,7 +103,7 @@
             this.enterAnsButton.TabIndex = 6;
             this.enterAnsButton.Text = "Ответить на вопрос";
             this.enterAnsButton.UseVisualStyleBackColor = true;
-            this.enterAnsButton.Click += new System.EventHandler(this.button2_Click);
+            this.enterAnsButton.Click += new System.EventHandler(this.enterAnsButton_Click);
             // 
             // Form1
             // 
