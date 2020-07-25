@@ -10,7 +10,7 @@ namespace Test {
         double success = 0; //Правильных ответов
         public Form1() {
             InitializeComponent();
-            button2.Enabled = false;
+            enterAnsButton.Enabled = false;
         }
         class questions {
             internal string question; //Вопрос
@@ -30,12 +30,12 @@ namespace Test {
 
         }
         void interf(questions que) {  //Интерфейс вопроса
-            richTextBox1.Text = que.question;
-            radioButton1.Text = que.answer1;
-            radioButton2.Text = que.answer2;
-            radioButton3.Text = que.answer3;
-            radioButton4.Text = que.answer4;
-            radioButton1.Checked = true;
+            richTextBoxQue.Text = que.question;
+            radioButtonAns1.Text = que.answer1;
+            radioButtonAns2.Text = que.answer2;
+            radioButtonAns3.Text = que.answer3;
+            radioButtonAns4.Text = que.answer4;
+            radioButtonAns1.Checked = true;
         }
         questions[] que;
         private void button1_Click(object sender, EventArgs e) {
@@ -71,9 +71,9 @@ namespace Test {
                 que[i] = new questions(que1[i], ans1[i], ans2[i], ans3[i], ans4[i], rA[i]);
             }
             interf(que[0]);
-            button2.Enabled = true;
-            button1.Enabled = false;
-            radioButton1.Checked = true;
+            enterAnsButton.Enabled = true;
+            loadTestButton.Enabled = false;
+            radioButtonAns1.Checked = true;
         }
         private void button2_Click(object sender, EventArgs e) {//Кнопка ответа на вопрос
             if(num < que.Length) {
@@ -99,21 +99,21 @@ namespace Test {
                     num++;
                     double proc = (Convert.ToDouble(success / que.Length) * 100);
                     MessageBox.Show("Вы ответили на всё! Ваш результат: " + " " + Math.Round(proc, 2) + "%");
-                    button2.Enabled = false;
+                    enterAnsButton.Enabled = false;
                 }
                 
             }
         }
-        private void radioButton1_CheckedChanged(object sender, EventArgs e) {
+        private void radioButtonAns1_CheckedChanged(object sender, EventArgs e) {
             ans = "1";
         }
-        private void radioButton2_CheckedChanged(object sender, EventArgs e) {
+        private void radioButtonAns2_CheckedChanged(object sender, EventArgs e) {
             ans = "2";
         }
-        private void radioButton3_CheckedChanged(object sender, EventArgs e) {
+        private void radioButtonAns3_CheckedChanged(object sender, EventArgs e) {
             ans = "3";
         }
-        private void radioButton4_CheckedChanged(object sender, EventArgs e) {
+        private void radioButtonAns4_CheckedChanged(object sender, EventArgs e) {
             ans = "4";
         }
     }
